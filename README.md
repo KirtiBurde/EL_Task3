@@ -202,7 +202,8 @@ Join condition:
 e.department_id = d.department_id
 
 So, this joins each employee to their department by department_id.
- 9. SUBQUERIES 
+
+**9. SUBQUERIES** 
 
 QUERY 1:
 select * 
@@ -234,7 +235,7 @@ limit 5;
 
 Explanation:
 
-1. Subquery:
+1: Subquery:
 
 (select avg(salary) from employee)
 
@@ -242,7 +243,7 @@ This calculates the average salary of all employees from the employee table.
 
 It's a scalar subquery—it returns a single value, not a list or table.
 
-2. Outer Query:
+2: Outer Query:
 
 select first_name, (subquery) as avg_salary from employee limit 5;
 
@@ -269,7 +270,7 @@ from employee: Refers to the table from which data is being queried.
 
 group by department_id: Groups the records based on department so that aggregate functions like SUM apply to each group individually.
 
-**QUERY 2:AVG**
+**QUERY 2:COUNT**
 
 select department_id, count(emp_id)
 from employee
@@ -277,7 +278,7 @@ group by department_id;
 
 Explanation:
 
-This query uses the COUNT() aggregate function, not AVG() (though you mentioned average — maybe you meant COUNT() as this is the query in the screenshot). Here's a breakdown:
+This query uses the COUNT() aggregate function. Here's a breakdown:
 
 department_id: The column by which you're grouping employees.
 
@@ -287,7 +288,7 @@ from employee: Pulls data from the employee table.
 
 group by department_id: Groups employees based on their department so the COUNT() applies to each group.
 
- 11. VIEW
+ **11. VIEW**
 
 Create a view named 'employee_G'
 create view employee_G as
@@ -299,44 +300,34 @@ where gender="F";
 
 1. View Creation: The statement creates a view named employee_G.
 
-
 2. Selected Columns: It selects the columns emp_id, first_name, and salary.
-
 
 3. Source Table: Data is taken from the table named employee.
 
-
 4. Filter Condition: It includes only those records where the gender column is equal to "F" (i.e., Female employees).
 
-
-
-
----
-
-🔹 Querying the View
+ **Querying the View**
 
 select * from employee_G;
 
 This statement retrieves all the data from the employee_G view that was just created.
 
- 12. OPTIMIZING QUERIES 
+ **12. OPTIMIZING QUERIES** 
 
 select * from employee
 where gender = "M"
 order by salary;
 
-✅ Explanation:
+Explanation:
 
 1: select * from employee:
 
 Retrieves all columns from the employee table.
 
 
-
 2: where gender = "M":
 
 Filters the data to only include male employees (M stands for male).
-
 
 
 3: order by salary:
