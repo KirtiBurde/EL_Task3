@@ -1,6 +1,6 @@
 # EL_Task3
 
-1. Setting the Database
+**1. Setting the Database**
 
 use company;
 
