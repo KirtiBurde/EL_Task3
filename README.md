@@ -15,7 +15,7 @@ QUERY 1:
 
 select * from employee;
 
-Meaning:
+**Meaning:**
 Get all columns and all rows from the employee table.
 The result includes:
 
@@ -26,7 +26,7 @@ QUERY 2:
 
 select * from department;
 
-Meaning:
+**Meaning:**
 Get all columns and all rows from the department table.
 
 
@@ -34,7 +34,7 @@ QUERY 3:
 
 select first_name, salary from employee order by salary desc;
 
-Meaning:
+**Meaning:**
 Get only the first_name and salary columns from the employee table, and sort the results by salary in descending order (highest salary first).
 
 
@@ -47,14 +47,14 @@ QUERY 1:
 
 select * from employee where salary<70000;
 
-Meaning:
+**Meaning:**
 Get all employees whose salary is less than 70,000.
 
 QUERY 2:
 
 select first_name, salary from employee where salary>70000;
 
-Meaning:
+**Meaning:**
 Show only the first name and salary of employees who earn more than 70,000.
 
 **4. ORDER BY Clause**
@@ -63,7 +63,7 @@ select emp_id, department_id, first_name, job_id, salary
 from employee 
 order by salary desc;
 
-Explanation :
+**Explanation :**
 
 select emp_id, department_id, first_name, job_id, salary
 → This part tells the database to fetch these specific columns from the employee table.
@@ -104,7 +104,7 @@ SELECT department_id, COUNT(emp_id)
 FROM employee
 GROUP BY department_id;
 
-Explanation:
+**Explanation:**
 
 SELECT department_id, COUNT(emp_id): This query selects each unique department_id from the employee table and counts how many employees (emp_id) are in each department.
 
@@ -118,7 +118,7 @@ SELECT manager_name, first_name, Department_name
 FROM employee e 
 INNER JOIN department d ON e.department_id = d.department_id;
 
-Explanation of the Query
+**Explanation of the Query**
 
 FROM employee e: You are using the employee table and giving it an alias e.
 
@@ -146,7 +146,7 @@ select e.*, d.department_name
 from employee as e
 left join department as d on e.department_id = d.department_id;
 
- Explanation:
+**Explanation:**
 
 What is a LEFT JOIN?
 
@@ -177,7 +177,7 @@ from employee as e
 right join department as d 
 on e.department_id = d.department_id;
 
-Explanation:
+**Explanation:**
 
 What does RIGHT JOIN do?
 
@@ -210,7 +210,7 @@ select *
 from employee 
 where salary > (select avg(salary) from employee);
 
-Explanation:
+**Explanation:**
 
 This query does the following:
 
@@ -233,7 +233,7 @@ select first_name,
 from employee 
 limit 5;
 
-Explanation:
+**Explanation:**
 
 1: Subquery:
 
@@ -258,7 +258,7 @@ select department_id, sum(salary)
 from employee 
 group by department_id;
 
-Explanation:
+**Explanation:**
 
 This SQL query calculates the total salary for each department in the employee table. Here's a breakdown of the components:
 
@@ -276,7 +276,7 @@ select department_id, count(emp_id)
 from employee
 group by department_id;
 
-Explanation:
+**Explanation:**
 
 This query uses the COUNT() aggregate function. Here's a breakdown:
 
@@ -296,7 +296,7 @@ select emp_id, first_name, salary
 from employee
 where gender="F";
 
-✅ What this does:
+**What this does:**
 
 1. View Creation: The statement creates a view named employee_G.
 
@@ -318,7 +318,7 @@ select * from employee
 where gender = "M"
 order by salary;
 
-Explanation:
+**Explanation:**
 
 1: select * from employee:
 
